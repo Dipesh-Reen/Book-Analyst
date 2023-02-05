@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from google_api_connection import get_volumes, get_volume_info
 
 app = Flask(__name__)
@@ -10,4 +10,3 @@ def all_volumes():
 @app.get("/volumes/<volume_id>")
 def volume_info(volume_id: str) -> str:
     return get_volume_info(volume_id=volume_id)['volumeInfo']
-
